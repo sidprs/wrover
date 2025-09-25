@@ -1,4 +1,4 @@
-# IPI
+# odyssey rover subsytem 
 
 ## Overview
 Wrover is a CubeSat-inspired project designed to demonstrate a full spacecraft subsystem integration at a small scale.  
