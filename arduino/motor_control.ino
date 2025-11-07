@@ -49,27 +49,25 @@ void motorDirectionBackward() {
   digitalWrite(in2, LOW);
   digitalWrite(in4, LOW);
 }
-void leftTurn() {
-  Serial.println("Turning Left");
+
+void motorLeftTurn() {
+  Serial.println("Left Turn");
   digitalWrite(in2, HIGH);
-  digitalWrite(in3,HIGH);
- 
-  
-  delay(500);
+  digitalWrite(in3, HIGH);
+  delay(700);
   digitalWrite(in2, LOW);
   digitalWrite(in3, LOW);
-  direction = 0;
 }
 
-void rightTurn() {
-  Serial.println("Turning Right");
-  digitalWrite(in2, LOW);
-  digitalWrite(in4,HIGH);
-  delay(500);
-  digitalWrite(in2, LOW);
+void motorRightTurn() {
+  Serial.println("Right Turn");
+  digitalWrite(in1, HIGH);
+  digitalWrite(in4, HIGH);
+  delay(700);
+  digitalWrite(in1, LOW);
   digitalWrite(in4, LOW);
-  direction = 0;
 }
+
 
 void loop() {
   mySpeed = 100;
@@ -84,6 +82,12 @@ void loop() {
     }
     else if (command == 'S' || command == 's') {
       motorDirectionBackward();
+    }
+    else if (command == 'A' || command == 'a') {
+      motorLeftTurn();
+    }
+    else if (command == 'D' || command == 'd') {
+      motorRightTurn();
     }
   }
   
