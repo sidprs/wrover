@@ -49,6 +49,27 @@ void motorDirectionBackward() {
   digitalWrite(in2, LOW);
   digitalWrite(in4, LOW);
 }
+void leftTurn() {
+  Serial.println("Turning Left");
+  digitalWrite(in2, HIGH);
+  digitalWrite(in3,HIGH);
+ 
+  
+  delay(500);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  direction = 0;
+}
+
+void rightTurn() {
+  Serial.println("Turning Right");
+  digitalWrite(in2, LOW);
+  digitalWrite(in4,HIGH);
+  delay(500);
+  digitalWrite(in2, LOW);
+  digitalWrite(in4, LOW);
+  direction = 0;
+}
 
 void loop() {
   mySpeed = 100;
